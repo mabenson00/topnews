@@ -41,12 +41,7 @@ Metrics/ParameterLists:
   Enabled: false
 Metrics/PerceivedComplexity:
   Enabled: false
-Metrics/BlockLength:
-  Exclude:
-    - config/initializers/**
-    - config/environments/**
-    - config/routes.rb
-    - lib/tasks/**
-    - app/admin/*.rb
-    - spec/**/*.rb
-    - app/services/seeds/tables_seed.rb
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/FrozenStringLiteralComment:
+  Enabled: false
