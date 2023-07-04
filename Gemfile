@@ -7,6 +7,7 @@ gem "byebug", platforms: [:mri, :mingw, :x64_mingw], group: [:development, :test
 gem "capybara", group: [:development, :test]
 gem "coffee-rails"
 gem "devise"
+gem "faker"
 gem "factory_bot_rails", group: [:development, :test]
 gem "httparty"
 gem "jbuilder"

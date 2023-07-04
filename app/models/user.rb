@@ -29,5 +29,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :favorited_stories, class_name: "Story", through: :user_favorite_stories
+  has_and_belongs_to_many :favorited_stories, class_name: "Story", join_table: :user_favorite_stories
 end

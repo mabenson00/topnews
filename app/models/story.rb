@@ -12,5 +12,5 @@
 #  updated_at :datetime         not null
 #
 class Story < ApplicationRecord
-  has_many :favorited_users, class_name: "User", through: :user_favorite_stories
+  has_and_belongs_to_many :favorited_users, class_name: "User", join_table: :user_favorite_stories
 end

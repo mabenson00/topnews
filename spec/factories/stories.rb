@@ -16,5 +16,7 @@ FactoryBot.define do
     title { Faker::Lorem.sentence }
     url { Faker::Internet.url }
     score { rand(1000) }
+    time { Time.current - rand(1000.minutes) }
+    uuid { SecureRandom.uuid }
   end
 end
