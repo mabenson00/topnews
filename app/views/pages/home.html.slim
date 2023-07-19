@@ -1,0 +1,7 @@
+h1 Welcome To Top News
+- @stories.each do |story|
+  .row
+    .title
+      = link_to story.title, story.url
+    .details
+      = "#{story.score} points, posted #{time_ago_in_words(story.time)} ago"

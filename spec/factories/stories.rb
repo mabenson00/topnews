@@ -3,6 +3,8 @@
 # Table name: stories
 #
 #  id         :bigint           not null, primary key
+#  is_active  :boolean          default(TRUE), not null
+#  rank       :integer
 #  score      :integer
 #  time       :datetime
 #  title      :string

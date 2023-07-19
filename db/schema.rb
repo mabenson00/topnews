@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_04_012231) do
     t.datetime "time"
     t.integer "score"
     t.string "uuid"
+    t.integer "rank"
+    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
