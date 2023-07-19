@@ -1,3 +1,9 @@
+User.find_or_initialize_by(email: 'michael@test.com').update({
+  first_name: 'Michael',
+  last_name: 'Test',
+  password: 'topsecret!'
+})
+
 User.find_or_initialize_by(email: 'DonaldGMiller@example.com').update({
   first_name: 'Donald',
   last_name: 'Miller',
@@ -15,3 +21,5 @@ User.find_or_initialize_by(email: 'MargeRWilliams@example.com').update({
   last_name: 'Williams',
   password: 'Aechugh1ie'
 })
+
+p "seeds complete 🌱"
