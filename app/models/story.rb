@@ -13,4 +13,5 @@
 #
 class Story < ApplicationRecord
   has_and_belongs_to_many :favorited_users, class_name: "User", join_table: :user_favorite_stories
+  # story keys from hacker_rank => ["by", "descendants", "id", "kids", "score", "time", "title", "type", "url"]
 end

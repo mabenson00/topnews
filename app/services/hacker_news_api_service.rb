@@ -1,4 +1,4 @@
-class HackerRankService
+class HackerNewsApiService
   include HTTParty
   base_uri "https://hacker-news.firebaseio.com/v0"
 
@@ -14,7 +14,7 @@ class HackerRankService
     self.class.get("/newstories.json")
   end
 
-  def item
+  def details
     raise ArgumentError, "id is required" unless @id
 
     self.class.get("/item/#{@id}.json")
