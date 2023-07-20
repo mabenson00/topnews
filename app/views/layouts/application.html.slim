@@ -1,0 +1,39 @@
+doctype transitional
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+    title
+      | Top News
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    p.notice
+      = notice
+    p.alert
+      = alert
+    .container-body
+      = yield
+  javascript:
+    document.addEventListener('DOMContentLoaded', function() {
+      const alertElement = document.querySelector('.alert');
+      const noticeElement = document.querySelector('.notice');
+
+      if (alertElement.innerHTML.trim() === '') {
+        alertElement.style.display = 'none';
+      } else {
+        alertElement.style.display = 'block';
+        setTimeout(function() {
+          alertElement.style.display = 'none';
+        }, 2000);
+      }
+
+      if (noticeElement.innerHTML.trim() === '') {
+        noticeElement.style.display = 'none';
+      } else {
+        noticeElement.style.display = 'block';
+        setTimeout(function() {
+          noticeElement.style.display = 'none';
+        }, 2000);
+      }
+    });
