@@ -15,9 +15,21 @@
 #
 class Story < ApplicationRecord
   has_and_belongs_to_many :favorited_users, class_name: "User", join_table: :user_favorite_stories
+  has_many :favorites
+
   scope :active, -> { where(is_active: true) }
   scope :ordered, -> { order(rank: :asc) }
+  scope :recently_favorited, -> { joins(:favorites).group("stories.id").order("MAX(user_favorite_stories.created_at) DESC") }
 
-  default_scope { ordered }
-  # story keys from hacker_rank => ["by", "descendants", "id", "kids", "score", "time", "title", "type", "url"]
+  def favorite_count
+    favorited_users.count
+  end
+
+  def last_favorited_time
+    favorites.maximum(:created_at)
+  end
+
+  def favorited_by
+    favorited_users.collect(&:full_name).join(", ")
+  end
 end

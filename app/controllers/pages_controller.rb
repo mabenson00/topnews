@@ -1,10 +1,11 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!
   STORY_LIMIT = 20
   MAX_STORY_LIMIT = 100
   MIN_STORY_LIMIT = 1
+
   def home
-    @stories = Story.active.limit(limit)
+    @top_stories = Story.active.ordered.limit(limit)
+    @recently_favorited_stories = @favorited_stories = Story.recently_favorited
   end
 
   private

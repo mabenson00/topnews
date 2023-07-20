@@ -29,5 +29,25 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # i shouldve made a new model "favorites" which would have a user_id and story_id
   has_and_belongs_to_many :favorited_stories, class_name: "Story", join_table: :user_favorite_stories
+  has_many :favorites
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def favorite!(story)
+    favorited_stories << story
+    save!
+  end
+
+  def unfavorite!(story)
+    favorited_stories.delete(story)
+    save!
+  end
+
+  def favorited?(story)
+    favorited_stories.include?(story)
+  end
 end

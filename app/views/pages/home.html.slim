@@ -1,10 +1,30 @@
-h1 Welcome To Top News
-- @stories.each do |story|
-  .row
-    .title
-      = link_to story.title, story.url
-    .details
-      - if story.time.present?
-        = "#{story.score} points, posted #{time_ago_in_words(story.time)} ago (rank #{story.rank})"
-      - else
-        = "#{story.score} points (rank #{story.rank})"
+.column
+  h1 Top on Hacker News
+  - @top_stories.each do |story|
+    .row
+      .favorite
+        - if current_user && current_user.favorited?(story)
+          = link_to '⭐', unfavorite_story_path(story), method: :put
+        - else
+          = link_to '☆', favorite_story_path(story), method: :put
+      .title
+        = link_to story.title, story.url
+      .details
+        - if story.time.present?
+          = "#{story.score} points, posted #{time_ago_in_words(story.time)} ago (rank #{story.rank})"
+        - else
+          = "#{story.score} points (rank #{story.rank})"
+
+.column
+  h1 Recently Favorited Internally
+  - @recently_favorited_stories.each do |story|
+    .row
+      .favorite
+        - if current_user && current_user.favorited?(story)
+          = link_to '⭐', unfavorite_story_path(story), method: :put
+        - else
+          = link_to '☆', favorite_story_path(story), method: :put
+      .title
+        = link_to story.title, story.url
+      .details data-tooltip="Favorited by #{story.favorited_by}"
+          = "#{story.favorite_count} favorites, last favorited #{time_ago_in_words(story.last_favorited_time)} ago"
