@@ -1,17 +1,9 @@
-# Top News: Internal Team News Feed
+# Set Up
+* with RVM or rbenv install and set version to `3.2.0` (if easier, change `.ruby-version` to your version and bundle install)
+* `rake db:create && rake db:migrate && rake db:seed`
+* open two terminal windows and run `bundle exec sidekiq` in one, `rails s` in the other
+* login with the seeded user, eg: `LawrenceWGrant@example.com`, `ahR7iecai`
 
-In order to evaluate your stengths as a developer, we are requesting you complete a brief take-home code challenge that involves some work on the full web stack. We expect this to take 2 to 4 hours of your time. After developing your solution, please submit a Pull Request on Github and we will discuss your code on a screenshare at the next interview.
-
-## Introduction
-
-[Hacker News](https://news.ycombinator.com/) is a well-known technology news aggregator service and forum maintained by seed stage investment firm, Y-Combinator. Via Firebase, Y-Combinator provides a simple JSON API to retrieve story information. The API requires no authentication and is documented in a [GitHub repo](https://github.com/HackerNews/API). The two most useful API calls are:
-
-* [List of top stories](https://hacker-news.firebaseio.com/v0/topstories.json)
-* [Show story details](https://hacker-news.firebaseio.com/v0/item/8863.json)
-
-Suppose you have a small team of developers who all regularly browse Hacker News for industry insights. This team would like a simple way to flag articles that could be of interest to other team members and publish that list out to the rest of the team. This UI would be deployed for internal use so it would not require a public sign up but would be pre-populated with users who will be team members.
-
-When a team member signs in, they will see recent news stories and be able to star, flag, highlight, or otherwise mark a story as interesting. A separate list should display all the stories that were deemed interesting and the name of the person who marked it so.
 
 ## Requirements
 
