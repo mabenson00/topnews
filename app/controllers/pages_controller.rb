@@ -11,8 +11,8 @@ class PagesController < ApplicationController
 
   def valid_limit?
     limit_int = params[:limit].to_i
-    return false unless params[:limit].present?
-    return false unless MIN_STORY_LIMIT < limit_int && limit_int < MAX_STORY_LIMIT
+    return false if params[:limit].blank?
+    return false if limit_int < MIN_STORY_LIMIT || limit_int > MAX_STORY_LIMIT
 
     true
   end
