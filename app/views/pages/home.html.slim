@@ -4,4 +4,7 @@ h1 Welcome To Top News
     .title
       = link_to story.title, story.url
     .details
-      = "#{story.score} points, posted #{time_ago_in_words(story.time)} ago"
+      - if story.time.present?
+        = "#{story.score} points, posted #{time_ago_in_words(story.time)} ago (rank #{story.rank})"
+      - else
+        = "#{story.score} points (rank #{story.rank})"

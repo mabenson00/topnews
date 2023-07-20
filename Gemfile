@@ -23,7 +23,7 @@ gem "spring", group: :development
 gem "turbolinks"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "uglifier"
-gem "whenever"
+gem "sidekiq-scheduler"
 gem "web-console", group: :development
 gem "slim"
 gem "rubocop", require: false

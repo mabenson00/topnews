@@ -6,12 +6,8 @@ class HackerNewsApiService
     @id = options[:id]
   end
 
-  def best_stories
-    self.class.get("/beststories.json")
-  end
-
-  def new_stories
-    self.class.get("/newstories.json")
+  def top_story_uuids
+    self.class.get("/topstories.json")
   end
 
   def details
