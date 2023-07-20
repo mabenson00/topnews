@@ -17,3 +17,10 @@
 * As an internal tool for a small team, performance optimization is not a requirement.
 * Be prepared to discuss known performance shortcomings of your solution and potential improvements.
 * UX design here is of little importance. The design can be minimal or it can have zero design at all.
+
+<img width="1175" alt="image" src="https://github.com/mabenson00/topnews/assets/22816934/798b60e6-9aa6-4809-88a2-4846a63ae15a">
+
+## Notes
+* We don't need tests for this fun internal admin tool, plus they take time. Though if I was doing this at work, I'd write a test to make sure the page at least loads.
+* Hover over the details on the right column to see who favorited.
+* Include limit=XX to change the number of articles shown on the page.
